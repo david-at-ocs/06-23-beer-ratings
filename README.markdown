@@ -28,7 +28,7 @@ There are at least four tables for this project...
   - id (primary key)
   - name (i.e. IPA, Belgian Ale)
   
-###style
+###styles
   - id (primary key)
   - family_id
   - style
