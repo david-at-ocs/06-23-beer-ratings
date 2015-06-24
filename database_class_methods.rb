@@ -42,8 +42,7 @@ module DatabaseClassMethods
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
     results = BEERDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
-    binding.pry
-    Beer.new(results)
+    self.new(results)
   end
   
   
