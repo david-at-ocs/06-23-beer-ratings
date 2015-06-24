@@ -54,5 +54,16 @@ class Beer
     Beer.new(results)
   end  
   
+  # Updates the database with all values for the beer.
+  #
+  # Returns an empty Array. TODO - This should return something better.
+  def save
+    if self.beer_name.blank?
+      return false
+    else
+      BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}' WHERE id = #{@id};")
+    end
+  end
+  
   
 end

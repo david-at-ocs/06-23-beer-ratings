@@ -1,4 +1,6 @@
 
+
+# -----------------------------------------------------------------------------------------------------------------
 # --------------------------------------------- Beers Menu --------------------------------------------------------
 
 get "/beer/beers_menu" do
@@ -30,3 +32,28 @@ get "/beer/view_all_beers" do
   @all_beers = Beer.all
   erb :"beers/view_beers"
 end
+
+# --------------------------------------------- Edit Beers --------------------------------------------------------
+
+get "/beer/edit_beers" do
+  @all_beers = Beer.all
+  erb :"beers/edit_beer_form"
+end
+
+get "/beer/edit_beer_name" do
+  @beer_to_edit = Beer.find_as_object(params["beer_id"].to_i)
+  @beer_to_edit.beer_name = params["beer_name"]
+  if @beer_to_edit.save
+    erb :"beers/beer_name_changed"
+  else
+    @error = true
+    erb :"beers/edit_beer_form"
+  end
+end
+
+
+
+
+
+
+

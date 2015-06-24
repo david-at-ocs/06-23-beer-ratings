@@ -1,0 +1,21 @@
+<h1>Edit Beer</h1>
+<% if @error %>
+  <h3>There was an error updating the beer. Please try again.</h3>
+<% end %>
+<ul>
+  <li><h3>Change Beer's Name</h3>
+    <form action="/beer/edit_beer_name">
+      <select name="beer_id">
+        <% Beer.all.each do |beer| %>
+          <option value="<%= beer.id %>"><%= beer.id %>. <%= beer.beer_name %></option>
+        <% end %>
+      </select>
+      <input type="text" placeholder="Change Name" name="beer_name">
+      <input type="submit" value="Change Beer">
+    </form>
+  </li>
+
+<ul>
+  <li><a href="beers_menu">Beer menu</a></li>
+  <li><a href="../homepage">Homepage</a></li>
+</ul>
