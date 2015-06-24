@@ -1,7 +1,10 @@
 require_relative "../database_class_methods.rb"
-# require_relative "database_instance_methods.rb"
+require_relative "../database_instance_methods.rb"
 
 class Beer
+
+  extend DatabaseClassMethods
+  include DatabaseInstanceMethods
   
   # Initializes a new Beer object
   #
@@ -32,7 +35,6 @@ class Beer
     if options["beer_name"].blank? 
       return false
     else
-      binding.pry
       self.add_to_database(options)
     end
   end

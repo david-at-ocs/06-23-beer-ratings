@@ -4,14 +4,13 @@ require "active_support/inflector"
 # This module will be **extended** in all of my classes. It contains methods
 # that will become **class** methods for the class.
 
-module DatabaseClassMethods
-  
+module DatabaseClassMethods  
   
   # Adds a new record to the database.
   #
   #
   # Return an Integer of ID of inserted row.
-  def self.add_to_database(options={})
+  def add_to_database(options={})
     table_name = self.to_s.pluralize.underscore
     
     column_names = options.keys
@@ -42,7 +41,7 @@ module DatabaseClassMethods
   def find(record_id)
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
-    MOVIEDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+    BEERDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
   end  
   
   
