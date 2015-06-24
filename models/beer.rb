@@ -42,19 +42,6 @@ class Beer
   end
   
   
-  
-  # Find a beer based on its' ID.
-  #
-  # student_id - The Integer ID of the student to return.
-  #
-  # Returns a Beer object.
-  # def self.find_as_object(beer_id)
-  #   @id = beer_id
-  #   results = Beer.find(beer_id).first
-  #   Beer.new(results)
-  # end
-  
-  
   # Updates the database with all values for the beer.
   #
   # Returns an empty Array. TODO - This should return something better.
