@@ -13,7 +13,6 @@ get "/beer/add" do
   
   if new_beer_id
     @new_beer = Beer.find_as_object(new_beer_id)
-    binding.pry
     erb :"beers/beer_added"
   else
     @error = true

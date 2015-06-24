@@ -1,7 +1,9 @@
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 
-class Beer
+class Beer  
+  attr_reader :id
+  attr_accessor :beer_name
 
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
