@@ -41,8 +41,9 @@ get "/beer/edit_beers" do
 end
 
 get "/beer/edit_beer_name" do
-  @beer_to_edit = Beer.find_as_object(params["beer_id"].to_i)
+  @beer_to_edit = Beer.find(params["beer_id"].to_i)
   @beer_to_edit.beer_name = params["beer_name"]
+  binding.pry
   if @beer_to_edit.save
     erb :"beers/beer_name_changed"
   else

@@ -38,10 +38,12 @@ module DatabaseClassMethods
   # record_id - The record's Integer ID.
   #
   # Returns an Array containing the Hash of the row.
-  def find(record_id)
+  def find(record_id)    
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
-    BEERDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+    results = BEERDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
+    binding.pry
+    Beer.new(results)
   end
   
   

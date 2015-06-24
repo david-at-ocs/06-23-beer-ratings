@@ -48,22 +48,34 @@ class Beer
   # student_id - The Integer ID of the student to return.
   #
   # Returns a Beer object.
-  def self.find_as_object(beer_id)
-    @id = beer_id
-    results = Beer.find(beer_id).first
-    Beer.new(results)
-  end  
+  # def self.find_as_object(beer_id)
+  #   @id = beer_id
+  #   results = Beer.find(beer_id).first
+  #   Beer.new(results)
+  # end
+  
   
   # Updates the database with all values for the beer.
   #
   # Returns an empty Array. TODO - This should return something better.
   def save
-    if self.beer_name.blank?
+    if self.valid?
       return false
     else
       BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}' WHERE id = #{@id};")
     end
+
+    # if self.beer_name.blank?
+    #   return false
+    # else
+    #   BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}' WHERE id = #{@id};")
+    # end
   end
+  
+  def valid?
+    self.beer_name.blank?
+  end
+    
   
   
 end
