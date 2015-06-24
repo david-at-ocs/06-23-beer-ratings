@@ -11,7 +11,7 @@ module DatabaseClassMethods
   #
   #
   # Return an Integer of ID of inserted row.
-  def add_to_database(options={})
+  def self.add_to_database(options={})
     table_name = self.to_s.pluralize.underscore
     
     column_names = options.keys
@@ -30,9 +30,20 @@ module DatabaseClassMethods
     values_for_sql = individual_values_for_sql.join(", ") 
 
     BEERDB.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{values_for_sql});")
-
     BEERDB.last_insert_row_id
   end
+  
+  
+  # Get a single row.
+  #
+  # record_id - The record's Integer ID.
+  #
+  # Returns an Array containing the Hash of the row.
+  def find(record_id)
+    # Figure out the table's name from the class we're calling the method on.
+    table_name = self.to_s.pluralize.underscore
+    MOVIEDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+  end  
   
   
 end

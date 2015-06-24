@@ -29,14 +29,26 @@ class Beer
   # Calls 'add_to_database' in class Module to do database work
   # Returns the Integer ID that the database sends back.
   def self.add(options={})
-    if options["name"].blank? 
+    if options["beer_name"].blank? 
       return false
     else
+      binding.pry
       self.add_to_database(options)
     end
   end
   
   
+  
+  # Find a beer based on its' ID.
+  #
+  # student_id - The Integer ID of the student to return.
+  #
+  # Returns a Beer object.
+  def self.find_as_object(beer_id)
+    @id = beer_id
+    results = Beer.find(beer_id).first
+    Beer.new(results)
+  end  
   
   
 end
