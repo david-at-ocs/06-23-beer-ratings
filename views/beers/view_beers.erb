@@ -1,0 +1,11 @@
+<h1>A list of all movies in the database:</h1>
+<ul>
+  <% @all_beers.each do |beers| %>
+    <li> ID: <%= beers.id %> -- <%= beers.beer_name %>
+  <% end %>
+</ul>
+
+<ul>
+  <li><a href="beers_menu">Beer menu</a></li>
+  <li><a href="../homepage">Homepage</a></li>
+</ul>

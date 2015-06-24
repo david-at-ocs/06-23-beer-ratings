@@ -42,7 +42,27 @@ module DatabaseClassMethods
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
     BEERDB.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
-  end  
+  end
+  
+  
+  
+  # Get all of the rows for a table.
+  #
+  # Returns an Array containing objects for each row.
+  def all
+    # Figure out the table's name from the class we're calling the method on.
+    table_name = self.to_s.pluralize.underscore
+    
+    results = BEERDB.execute("SELECT * FROM #{table_name}")
+
+    results_as_objects = []
+    
+    results.each do |result_hash|
+      results_as_objects << self.new(result_hash)
+    end
+    
+    return results_as_objects
+  end
   
   
 end

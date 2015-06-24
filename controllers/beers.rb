@@ -1,7 +1,11 @@
 
+# --------------------------------------------- Beers Menu --------------------------------------------------------
+
 get "/beer/beers_menu" do
   erb :"beers/beers_menu"
 end
+
+# --------------------------------------------- Add Beer ----------------------------------------------------------
 
 get "/beer/add_beers" do
   erb :"beers/add_beer_form"
@@ -18,4 +22,11 @@ get "/beer/add" do
     @error = true
     erb :"beers/add_beer_form"
   end
+end
+
+# --------------------------------------------- View Beers --------------------------------------------------------
+
+get "/beer/view_all_beers" do
+  @all_beers = Beer.all
+  erb :"beers/view_beers"
 end
