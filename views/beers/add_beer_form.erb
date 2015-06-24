@@ -1,0 +1,14 @@
+<h1>Add Beer</h1>
+<% if @error %>
+  <h3>There was an error adding the beer. Please try again.</h3>
+<% end %>
+
+<form action="/beer/add">
+  <input type="text" placeholder="Beer Name" name="name">
+  <input type="submit" value="Add Beer">
+</form>
+
+<ul>
+  <li><a href="beer/beer_menu">Add menu</a></li>
+  <li><a href="homepage">Homepage</a></li>
+</ul>

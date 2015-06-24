@@ -4,7 +4,6 @@ require "sinatra"
 require "sinatra/reloader"
 require "pry"
 
-
 # -------------------------------------------------------------------------------------------------------------------
 # SQL/Database
 require "sqlite3"
