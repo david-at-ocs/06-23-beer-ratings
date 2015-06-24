@@ -18,21 +18,18 @@ class Beer
   def initialize(options = {})
     @id = options["id"]
     @beer_name = options["beer_name"]
-    @brewery_id = options["brewery_id"]
-    @style_id = options["style_id"]
+    # TODO uncomment lines below later when start with other tables
+    # @brewery_id = options["brewery_id"]
+    # @style_id = options["style_id"]
   end    
   
 
   # Adds a *new* row to the "beers" table, using this object's attribute values.
   #
-  # Calls 'add_to_database' in class Module to do database
+  # Calls 'add_to_database' in class Module to do database work
   # Returns the Integer ID that the database sends back.
   def self.add(options={})
-    # if either of the foriegn keys is 0, returns false and won't add to database (TODO not sure if this is needed)
-    if options["brewery_id"] == 0 || options["style_id"] == 0
-      return false
-    # if beer_name blank, returns false and won't add to database (TODO not sure if this is needed)
-    elsif options["beer_name"].blank? 
+    if options["name"].blank? 
       return false
     else
       self.add_to_database(options)

@@ -8,9 +8,10 @@ get "/beer/add_beers" do
 end
 
 get "/beer/add" do
-  new_movie_id = Beer.add({"name" => params["name"]) # TODO add some more stuff to this hash later
+  new_beer_id = Beer.add({"name" => params["name"]) # TODO add some more stuff to this hash later
   
-  if new_movie_id
+  # new_beer_id is the Integer returned from the add method
+  if new_beer_id
     @new_beer = Beer.find_as_object(new_beer_id)
     erb:"beer_added" # TODO still need to add this file
   else
