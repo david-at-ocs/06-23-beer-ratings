@@ -31,8 +31,7 @@ There are at least four tables for this project...
 ###styles
   - id (primary key)
   - family_id
-  - style
-  
+  - style  
 
 ###ratings
   - id (primary key)
