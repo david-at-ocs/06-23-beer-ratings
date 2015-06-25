@@ -29,9 +29,9 @@ end
 
 # --------------------------------------------- View Users --------------------------------------------------------
 
-get "/beer/view_all_beers" do
+get "/users/view_all_users" do
   @all_users = User.all
-  erb :"beers/view_beers"
+  erb :"users/view_users"
 end
 
 # --------------------------------------------- Edit Users --------------------------------------------------------
