@@ -44,7 +44,6 @@ end
 get "/beer/view_rating" do
   @beer_to_view = Beer.find(params["beer_id"].to_i)
   @average = @beer_to_view.beer_average
-  binding.pry
   erb :"beers/view_rating"
 end
 
