@@ -33,6 +33,20 @@ get "/beer/view_all_beers" do
   erb :"beers/view_beers"
 end
 
+
+# --------------------------------------------- View Beer Rating ---------------------------------------------------
+
+get "/beer/view_beer_rating" do
+  @all_beers = Beer.all
+  erb :"beers/view_beer_rating"
+end
+
+get "/beer/view_rating" do
+  @beer_to_view = Beer.find(params["beer_id"].to_i)
+  @average = @beer_to_view.beer_average[0]["AVG(rating)"]
+  binding.pry
+end
+
 # --------------------------------------------- Edit Beers --------------------------------------------------------
 
 get "/beer/edit_beers" do

@@ -62,7 +62,11 @@ class Beer
   def valid?
     self.beer_name.blank?
   end
-    
+  
+  def beer_average
+    BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
+  end
+  
   
   
 end

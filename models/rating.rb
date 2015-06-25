@@ -52,6 +52,7 @@ class Rating
   # def valid?
   #   self.beer_name.blank?
   # end
-  
+    
+
   
 end

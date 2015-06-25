@@ -12,6 +12,7 @@ require_relative "database_setup.rb"
 # Models
 require_relative "models/beer.rb"
 require_relative "models/user.rb"
+require_relative "models/rating.rb"
 
 
 # Controllers
