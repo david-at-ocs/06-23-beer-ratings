@@ -64,7 +64,9 @@ class Beer
   end
   
   def beer_average
-    BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
+    ave = BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
+    average = ave[0]["AVG(rating)"]
+    return sprintf('%.2f', average)
   end
   
   

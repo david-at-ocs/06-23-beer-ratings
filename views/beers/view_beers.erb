@@ -1,7 +1,12 @@
 <h1>A list of all movies in the database:</h1>
 <ul>
   <% @all_beers.each do |beers| %>
-    <li> ID: <%= beers.id %> -- <%= beers.beer_name %> -- Ave. rating: ????
+    <li><%= beers.beer_name %>
+      <ul>
+        <li>Rating: <%= beers.beer_average %></li>
+        <li>ID: <%= beers.id %></li>
+      </ul>
+    </li>
   <% end %>
 </ul>
 
