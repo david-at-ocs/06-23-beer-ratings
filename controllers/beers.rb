@@ -18,7 +18,7 @@ get "/beer/add" do
   new_beer_id = Beer.add({"beer_name" => params["beer_name"]}) # TODO add some more stuff to this hash later
   
   if new_beer_id
-    @new_beer = Beer.find_as_object(new_beer_id)
+    @new_beer = Beer.find(new_beer_id)
     erb :"beers/beer_added"
   else
     @error = true
@@ -59,7 +59,7 @@ get "/beer/delete_beer_form" do
 end
 
 get "/beer/delete_beer" do
-  @beer_to_delete = Beer.find_as_object(params["beer_id"].to_i)
+  @beer_to_delete = Beer.find(params["beer_id"].to_i)
   if @beer_to_delete.delete
     erb :"beers/beer_deleted"
   else

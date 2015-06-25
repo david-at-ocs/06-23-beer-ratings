@@ -55,15 +55,23 @@ module DatabaseClassMethods
     table_name = self.to_s.pluralize.underscore
     
     results = BEERDB.execute("SELECT * FROM #{table_name}")
-
     results_as_objects = []
     
     results.each do |result_hash|
       results_as_objects << self.new(result_hash)
     end
-    
     return results_as_objects
   end
   
   
 end
+
+
+
+
+
+
+
+
+
+

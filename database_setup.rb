@@ -8,6 +8,7 @@ BEERDB = SQLite3::Database.new("beer_ratings.db")
 
 # TODO delete line below this when starting with other tables
 BEERDB.execute("CREATE TABLE IF NOT EXISTS beers (id INTEGER PRIMARY KEY, beer_name TEXT NOT NULL);")
+BEERDB.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, user_name TEXT NOT NULL);")
 
 # Get results as an Array of Hashes.
 BEERDB.results_as_hash = true
