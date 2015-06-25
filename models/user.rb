@@ -20,7 +20,7 @@ class User
   # Returns a User object
   def initialize(options = {})
     @id = options["id"]
-    @buser_name = options["user_name"]
+    @user_name = options["user_name"]
   end    
   
 

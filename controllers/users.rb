@@ -19,6 +19,7 @@ get "/users/add" do
   
   if new_user_id
     @new_user = User.find(new_user_id)
+    binding.pry
     erb :"users/user_added"
   else
     @error = true
