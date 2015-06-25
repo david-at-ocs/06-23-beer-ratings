@@ -1,0 +1,14 @@
+<h1>Add a User</h1>
+<% if @error %>
+  <h3>There was an error adding the user. Please try again.</h3>
+<% end %>
+
+<form action="/users/add">
+  <input type="text" placeholder="User Name" name="user_name">
+  <input type="submit" value="Add User">
+</form>
+
+<ul>
+  <li><a href="users_menu">User menu</a></li>
+  <li><a href="/homepage">Homepage</a></li>
+</ul>
