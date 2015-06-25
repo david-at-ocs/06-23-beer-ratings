@@ -36,19 +36,19 @@ end
 
 # --------------------------------------------- Edit Users --------------------------------------------------------
 
-get "/beer/edit_beers" do
-  @all_beers = User.all
-  erb :"beers/edit_beer_form"
+get "/users/edit_users_form" do
+  @all_users = User.all
+  erb :"users/edit_users_form"
 end
 
-get "/beer/edit_beer_name" do
-  @beer_to_edit = User.find(params["beer_id"].to_i)
-  @beer_to_edit.beer_name = params["beer_name"]
-  if @beer_to_edit.save
-    erb :"beers/beer_name_changed"
+get "/users/edit_user_name" do
+  @user_to_edit = User.find(params["user_id"].to_i)
+  @user_to_edit.user_name = params["user_name"]
+  if @user_to_edit.save
+    erb :"users/user_name_changed"
   else
     @error = true
-    erb :"beers/edit_beer_form"
+    erb :"users/edit_user_form"
   end
 end
 
