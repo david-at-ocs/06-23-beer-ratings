@@ -26,6 +26,7 @@ module DatabaseInstanceMethods
   
   # deletes a record from the db
   def delete
+    binding.pry
     table_name = self.class.to_s.pluralize.underscore
     BEERDB.execute("DELETE FROM #{table_name} WHERE id = #{@id};")    
   end  
