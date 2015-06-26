@@ -63,12 +63,58 @@ class Beer
     self.beer_name.blank?
   end
   
-  def beer_average
-    ave = BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
-    average = ave[0]["AVG(rating)"]
+  
+  
+  # argument all_ratings is an array of Rating objects
+  # 
+  def beer_average(all_ratings)
+    results = get_ratings(all_ratings)
+    average = get_average(results)
     return sprintf('%.2f', average)
+    # ave = BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
+    # average = ave[0]["AVG(rating)"]
+    # return sprintf('%.2f', average)
+  end  
+  
+ 
+  def get_ratings(all_ratings)
+    results = []
+    all_ratings.each do |x|
+      if x.beer_id == @id
+        results << x.rating
+      end
+    end  
+    return results  
   end
   
-  
+  def get_average(results)
+    results.inject{ |sum, el| sum + el }.to_f / results.size
+  end
   
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

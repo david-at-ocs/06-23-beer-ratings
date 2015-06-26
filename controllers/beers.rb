@@ -30,8 +30,7 @@ end
 
 get "/beer/view_all_beers" do
   @all_beers = Beer.all
-  # @all_ratings = Rating.all
-  # binding.pry
+  @all_ratings = Rating.all
   erb :"beers/view_beers"
 end
 

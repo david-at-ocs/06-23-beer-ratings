@@ -1,10 +1,10 @@
 <h1>A list of all beers in the database:</h1>
 <ul>
-  <% @all_beers.each do |beers| %>
-    <li><%= beers.beer_name %>
+  <% @all_beers.each do |beer| %>
+    <li><%= beer.beer_name %>
       <ul>
-        <li>Rating: <%= beers.beer_average %></li>
-        <li>ID: <%= beers.id %></li>
+        <li>Rating: <%= beer.beer_average(@all_ratings) %></li>
+        <li>ID: <%= beer.id %></li>
       </ul>
     </li>
   <% end %>
