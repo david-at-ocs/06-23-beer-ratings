@@ -67,16 +67,20 @@ class Beer
   
   # argument all_ratings is an array of Rating objects
   # 
+  # Returns average rating of a beer as a float
   def beer_average(all_ratings)
     results = get_ratings(all_ratings)
     average = get_average(results)
     return sprintf('%.2f', average)
+    
     # ave = BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
     # average = ave[0]["AVG(rating)"]
     # return sprintf('%.2f', average)
   end  
   
- 
+  # pushes all ratings for single beer_id into an Array
+  #
+  # Returns Array of ratings as integers
   def get_ratings(all_ratings)
     results = []
     all_ratings.each do |x|
@@ -87,6 +91,7 @@ class Beer
     return results  
   end
   
+  # Returns the average of array of integers as a float
   def get_average(results)
     results.inject{ |sum, el| sum + el }.to_f / results.size
   end
