@@ -1,9 +1,9 @@
-<h1>Edit Beer</h1>
+<h1>View a Beer's Rating</h1>
 <% if @error %>
   <h3>There was an error updating the beer. Please try again.</h3>
 <% end %>
 <ul>
-  <li><h3>Change Beer's Name</h3>
+  <li><h3>Choose a beer:</h3>
     <form action="/beer/view_rating">
       <select name="beer_id">
         <% Beer.all.each do |beer| %>
