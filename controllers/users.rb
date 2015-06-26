@@ -55,13 +55,13 @@ end
 # --------------------------------------------- Delete Users ------------------------------------------------------
 
 get "/users/delete_user_form" do
-  @all_beers = User.all
+  @all_users = User.all
   erb :"users/delete_user_form"
 end
 
 get "/users/delete_user" do
   @user_to_delete = User.find(params["user_id"].to_i)
-  Rating.delete_beer_ratings(params["user_id"].to_i)
+  Rating.delete_user_ratings(params["user_id"].to_i)
   if @user_to_delete.delete
     erb :"users/user_deleted"
   else

@@ -6,7 +6,7 @@
   <li><h3>Change Beer's Name</h3>
     <form action="/beer/edit_beer_name">
       <select name="beer_id">
-        <% Beer.all.each do |beer| %>
+        <% @all_beers.each do |beer| %>
           <option value="<%= beer.id %>"><%= beer.id %>. <%= beer.beer_name %></option>
         <% end %>
       </select>

@@ -1,20 +1,20 @@
 <h1>Delete User</h1>
 <% if @error %>
-  <h3>There was an error deleting the beer. Please try again.</h3>
+  <h3>There was an error deleting the user. Please try again.</h3>
 <% end %>
 <ul>
-  <li><h3>Delete Beer</h3>
-    <form action="/beer/delete_beer">
-      <select name="beer_id">
-        <% Beer.all.each do |beer| %>
-          <option value="<%= beer.id %>"><%= beer.id %>. <%= beer.beer_name %></option>
+  <li><h3>Delete User</h3>
+    <form action="/users/delete_user">
+      <select name="user_id">
+        <% @all_users.each do |user| %>
+          <option value="<%= user.id %>"><%= user.id %>. <%= user.user_name %></option>
         <% end %>
       </select>
-      <input type="submit" value="Delete Beer">
+      <input type="submit" value="Delete User">
     </form>
   </li>
 
 <ul>
-  <li><a href="beers_menu">Beer menu</a></li>
+  <li><a href="users_menu">User Menu</a></li>
   <li><a href="/homepage">Homepage</a></li>
 </ul>
