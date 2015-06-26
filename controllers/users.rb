@@ -54,18 +54,19 @@ end
 
 # --------------------------------------------- Delete Users ------------------------------------------------------
 
-get "/beer/delete_beer_form" do
+get "/users/delete_user_form" do
   @all_beers = User.all
-  erb :"beers/delete_beer_form"
+  erb :"users/delete_user_form"
 end
 
-get "/beer/delete_beer" do
-  @beer_to_delete = User.find(params["beer_id"].to_i)
-  if @beer_to_delete.delete
-    erb :"beers/beer_deleted"
+get "/users/delete_user" do
+  @user_to_delete = User.find(params["user_id"].to_i)
+  Rating.delete_beer_ratings(params["user_id"].to_i)
+  if @user_to_delete.delete
+    erb :"users/user_deleted"
   else
     @error = true
-    erb :"beers/edit_beer_form"
+    erb :"users/delete_user_form"
   end
 end
 

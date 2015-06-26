@@ -30,8 +30,7 @@ class Rating
   # argument beer_id is an Integer
   def self.delete_beer_ratings(beer_id)
     # table_name = self.class.to_s.pluralize.underscore
-    binding.pry
-    BEERDB.execute("DELETE FROM ratings WHERE beer_id = #{@beer_id};")    
+    BEERDB.execute("DELETE FROM ratings WHERE beer_id = #{beer_id};")    
   end
   
   def delete_user_ratings
