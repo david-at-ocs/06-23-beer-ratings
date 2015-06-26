@@ -63,15 +63,15 @@ class Beer
     self.beer_name.blank?
   end
   
-  def single_beer_average
-    ave = BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
-    average = ave[0]["AVG(rating)"]
-    if average == nil
-      return 0
-    else
-      return sprintf('%.2f', average)
-    end
-  end
+  # def single_beer_average
+  #   ave = BEERDB.execute("SELECT AVG(rating) FROM ratings WHERE beer_id = #{@id};")
+  #   average = ave[0]["AVG(rating)"]
+  #   if average == nil
+  #     return 0
+  #   else
+  #     return sprintf('%.2f', average)
+  #   end
+  # end
   
   
   # argument all_ratings is an array of Rating objects

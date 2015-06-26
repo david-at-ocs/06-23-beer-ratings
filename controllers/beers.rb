@@ -44,7 +44,8 @@ end
 
 get "/beer/view_rating" do
   @beer_to_view = Beer.find(params["beer_id"].to_i)
-  @average = @beer_to_view.single_beer_average
+  @all_ratings = Rating.all
+  @average = @beer_to_view.beer_average(@all_ratings)
   erb :"beers/view_rating"
 end
 
