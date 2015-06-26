@@ -97,11 +97,10 @@ class Beer
         results << x.rating
       end
     end
-    
     if no_ratings?(results)
       return 0
     else
-      return results  
+      return results
     end
   end
   
