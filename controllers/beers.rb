@@ -76,6 +76,7 @@ end
 
 get "/beer/delete_beer" do
   @beer_to_delete = Beer.find(params["beer_id"].to_i)
+  Rating.delete_beer_ratings(params["beer_id"].to_i)
   if @beer_to_delete.delete
     erb :"beers/beer_deleted"
   else

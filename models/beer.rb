@@ -80,7 +80,7 @@ class Beer
   def beer_average(all_ratings)
     results = get_ratings(all_ratings)
     if results == 0
-      return 0
+      return "--"
     else
       average = get_average(results)
       return sprintf('%.2f', average)

@@ -23,7 +23,20 @@ class Rating
     @user_id = options["user_id"]
     @rating = options["rating"]
   end    
+
   
+  # deletes all records from the db with beer_id
+  #
+  # argument beer_id is an Integer
+  def self.delete_beer_ratings(beer_id)
+    # table_name = self.class.to_s.pluralize.underscore
+    binding.pry
+    BEERDB.execute("DELETE FROM ratings WHERE beer_id = #{@beer_id};")    
+  end
+  
+  def delete_user_ratings
+    # something, something...
+  end
 
   # # Adds a *new* row to the "beers" table, using this object's attribute values.
   # #
