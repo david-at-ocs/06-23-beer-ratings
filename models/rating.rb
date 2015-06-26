@@ -20,7 +20,7 @@ class Rating
   def initialize(options = {})
     @id = options["id"]
     @beer_id = options["beer_id"]
-    @user_id = otions["user_id"]
+    @user_id = options["user_id"]
     @rating = options["rating"]
   end    
   
