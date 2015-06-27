@@ -7,7 +7,7 @@ get "/breweries/breweries_menu" do
   erb :"breweries/breweries_menu"
 end
 
-# --------------------------------------------- Add Brewery ----------------------------------------------------------
+# --------------------------------------------- Add Brewery -------------------------------------------------------
 
 get "/breweries/add_breweries" do
   erb :"breweries/add_brewery_form"
@@ -28,9 +28,9 @@ end
 
 # --------------------------------------------- View Users --------------------------------------------------------
 
-get "/users/view_all_users" do
-  @all_users = User.all
-  erb :"users/view_users"
+get "/breweries/view_all_breweries" do
+  @all_breweries = Brewery.all
+  erb :"breweries/view_breweries"
 end
 
 # --------------------------------------------- Edit Users --------------------------------------------------------

@@ -1,9 +1,9 @@
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 
-class User  
+class Brewery  
   attr_reader :id
-  attr_accessor :user_name
+  attr_accessor :brewery_name, :city
 
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
@@ -20,7 +20,8 @@ class User
   # Returns a User object
   def initialize(options = {})
     @id = options["id"]
-    @user_name = options["user_name"]
+    @brewery_name = options["brewery_name"]
+    @city = options["city"]
   end    
   
 
@@ -29,7 +30,7 @@ class User
   # Calls 'add_to_database' in class Module to do database work
   # Returns the Integer ID that the database sends back.
   def self.add(options={})
-    if options["user_name"].blank? 
+    if options["brewery_name"].blank? 
       return false
     else
       self.add_to_database(options)
@@ -44,12 +45,12 @@ class User
     if self.valid?
       return false
     else
-      BEERDB.execute("UPDATE users SET user_name = '#{@user_name}' WHERE id = #{@id};")
+      BEERDB.execute("UPDATE brewery SET brewery_name = '#{@brewery_name}', city = '#{@city}' WHERE id = #{@id};")
     end
   end
   
   def valid?
-    self.user_name.blank?
+    self.brewery_name.blank?
   end
     
   

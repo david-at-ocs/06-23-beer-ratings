@@ -1,0 +1,11 @@
+<h1>A list of all breweries in the database:</h1>
+<ul>
+  <% @all_breweries.each do |breweries| %>
+    <li> ID: <%= breweries.id %> -- <%= breweries.brewery_name %>
+  <% end %>
+</ul>
+
+<ul>
+  <li><a href="breweries_menu">Users menu</a></li>
+  <li><a href="/homepage">Homepage</a></li>
+</ul>
