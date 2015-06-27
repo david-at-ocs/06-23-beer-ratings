@@ -1,0 +1,15 @@
+<h1>Add a Brewery</h1>
+<% if @error %>
+  <h3>There was an error adding the brewery. Please try again.</h3>
+<% end %>
+
+<form action="/breweries/add">
+  <input type="text" placeholder="Brewery Name" name="brewery_name">
+  <input type="text" placeholder="Brewery City" name="city">
+  <input type="submit" value="Add Brewery">
+</form>
+
+<ul>
+  <li><a href="breweries_menu">Breweries Menu</a></li>
+  <li><a href="/homepage">Homepage</a></li>
+</ul>

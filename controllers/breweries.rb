@@ -19,10 +19,10 @@ get "/breweries/add" do
   
   if new_breweriy_id
     @new_brewery = Brewery.find(new_brewery_id)
-    erb :"users/user_added"
+    erb :"breweries/brewery_added"
   else
     @error = true
-    erb :"users/add_user_form"
+    erb :"breweries/add_brewery_form"
   end
 end
 
