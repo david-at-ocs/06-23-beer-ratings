@@ -7,6 +7,14 @@
     <td width="300">User Name</td>
     <td width="75">Rating</td>
   </tr>
+  <% @beer_ratings.each do |rating| %>
+    <tr>
+      <td><%= rating.user_name %></td>
+      <td><%= rating.rating %></td>
+    </tr>
+  <% end %>
+  <tr>
+    
 </table>
 
 <ul>
