@@ -23,8 +23,8 @@ class Beer
   def initialize(options = {})
     @id = options["id"]
     @beer_name = options["beer_name"]
+    @brewery_id = options["brewery_id"]
     # TODO uncomment lines below later when start with other tables
-    # @brewery_id = options["brewery_id"]
     # @style_id = options["style_id"]
   end    
   
@@ -49,14 +49,8 @@ class Beer
     if self.valid?
       return false
     else
-      BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}' WHERE id = #{@id};")
+      BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}', brewery_id = '#{brwery_id}' WHERE id = #{@id};")
     end
-
-    # if self.beer_name.blank?
-    #   return false
-    # else
-    #   BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}' WHERE id = #{@id};")
-    # end
   end
   
   def valid?
