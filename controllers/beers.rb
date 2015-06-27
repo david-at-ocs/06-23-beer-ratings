@@ -47,7 +47,6 @@ get "/beer/view_rating" do
   @all_ratings = Rating.all                             #   see below
   @average = @beer_to_view.beer_average(@all_ratings)   #   See if I can handle this with using 'get_beer_ratings'
   @beer_ratings = @beer_to_view.get_beer_ratings
-  binding.pry
   erb :"beers/view_rating"
 end
 

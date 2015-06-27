@@ -2,15 +2,15 @@
 
 <p>Average rating for <%= @beer_to_view.beer_name %> is <%= @average %></p>
 
-<table border="1">
-  <tr>
-    <td width="300">User Name</td>
-    <td width="75">Rating</td>
+<table>
+  <tr border="1">
+    <td width="300"><h3>User Name</h3></td>
+    <td width="75"><h3>Rating</h3></td>
   </tr>
   <% @beer_ratings.each do |rating| %>
     <tr>
-      <td><%= @beer_ratings[rating]["user_name"] %></td>
-      <td><%= @beer_ratings[rating]["rating"] %></td>
+      <td><%= rating["user_name"] %></td>
+      <td><%= rating["rating"] %></td>
     </tr>
   <% end %>
   <tr>
