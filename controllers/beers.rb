@@ -15,8 +15,9 @@ end
 
 get "/beer/add" do
   # new_beer_id is the Integer returned from the add method
-  new_beer_id = Beer.add({"beer_name" => params["beer_name"]}) # TODO add some more stuff to this hash later
-  
+  # TODO add some more stuff to this hash later
+  new_beer_id = Beer.add({"beer_name" => params["beer_name"], "brewery_id" => params["brewery_id"]})
+  @all_breweries = Brewery.all
   if new_beer_id
     @new_beer = Beer.find(new_beer_id)
     erb :"beers/beer_added"
@@ -44,8 +45,8 @@ end
 
 get "/beer/view_rating" do
   @beer_to_view = Beer.find(params["beer_id"].to_i)
-  @all_ratings = Rating.all                             #   see below
-  @average = @beer_to_view.beer_average(@all_ratings)   #   See if I can handle this with using 'get_beer_ratings'
+  @all_ratings = Rating.all                             #  <=  TODO See if I can handle these two 
+  @average = @beer_to_view.beer_average(@all_ratings)   #  <= lines using 'get_beer_ratings' on the next line
   @beer_ratings = @beer_to_view.get_beer_ratings
   erb :"beers/view_rating"
 end

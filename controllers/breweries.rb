@@ -15,9 +15,9 @@ end
 
 get "/breweries/add" do
   # new_brewery_id is the Integer returned from the add method
-  new_breweriy_id = Brewery.add({"brewery_name" => params["brewery_name"], "city" => params["city"]})
+  new_brewery_id = Brewery.add({"brewery_name" => params["brewery_name"], "city" => params["city"]})
   
-  if new_breweriy_id
+  if new_brewery_id
     @new_brewery = Brewery.find(new_brewery_id)
     erb :"breweries/brewery_added"
   else
