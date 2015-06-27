@@ -9,8 +9,8 @@
   </tr>
   <% @beer_ratings.each do |rating| %>
     <tr>
-      <td><%= rating.user_name %></td>
-      <td><%= rating.rating %></td>
+      <td><%= @beer_ratings[rating]["user_name"] %></td>
+      <td><%= @beer_ratings[rating]["rating"] %></td>
     </tr>
   <% end %>
   <tr>
