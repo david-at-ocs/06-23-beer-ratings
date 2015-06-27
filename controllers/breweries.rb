@@ -3,23 +3,22 @@
 # -----------------------------------------------------------------------------------------------------------------
 # --------------------------------------------- Breweries Menu ----------------------------------------------------
 
-get "breweries/breweries_menu" do
+get "/breweries/breweries_menu" do
   erb :"breweries/breweries_menu"
 end
 
-# --------------------------------------------- Add User ----------------------------------------------------------
+# --------------------------------------------- Add Brewery ----------------------------------------------------------
 
-get "/users/add_users" do
-  erb :"users/add_user_form"
+get "/breweries/add_breweries" do
+  erb :"breweries/add_brewery_form"
 end
 
-get "/users/add" do
-  # new_beer_id is the Integer returned from the add method
-  new_user_id = User.add({"user_name" => params["user_name"]})
+get "/breweries/add" do
+  # new_brewery_id is the Integer returned from the add method
+  new_breweriy_id = Brewery.add({"brewery_name" => params["brewery_name"], "city" => params["city"]})
   
-  if new_user_id
-    @new_user = User.find(new_user_id)
-    binding.pry
+  if new_breweriy_id
+    @new_brewery = Brewery.find(new_brewery_id)
     erb :"users/user_added"
   else
     @error = true
