@@ -11,6 +11,7 @@ BEERDB.execute("CREATE TABLE IF NOT EXISTS beers (id INTEGER PRIMARY KEY, beer_n
 BEERDB.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, user_name TEXT NOT NULL);")
 BEERDB.execute("CREATE TABLE IF NOT EXISTS ratings (id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, beer_id INTEGER NOT NULL, rating INTEGER NOT NULL);")
 BEERDB.execute("CREATE TABLE IF NOT EXISTS breweries (id INTEGER PRIMARY KEY, brewery_name TEXT NOT NULL, city TEXT);")
+BEERDB.execute("CREATE TABLE IF NOT EXISTS style_families (id INTEGER PRIMARY KEY, family_name TEXT NOT NULL);")
 
 # Get results as an Array of Hashes.
 BEERDB.results_as_hash = true
