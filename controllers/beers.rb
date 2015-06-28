@@ -55,6 +55,7 @@ end
 
 get "/beer/edit_beers" do
   @all_beers = Beer.all
+  @all_breweries = Brewery.all
   erb :"beers/edit_beer_form"
 end
 
@@ -64,6 +65,21 @@ get "/beer/edit_beer_name" do
   if @beer_to_edit.save
     erb :"beers/beer_name_changed"
   else
+    @all_beers = Beer.all
+    @all_breweries = Brewery.all
+    @error = true
+    erb :"beers/edit_beer_form"
+  end
+end
+
+get "/beer/edit_beer_brewery" do
+  @beer_to_edit = Beer.find(params["beer_id"].to_i)
+  @beer_to_edit.brewery_id = params["brewery_id"].to_i
+  if @beer_to_edit.save
+    erb :"beers/beer_brewery_changed"
+  else
+    @all_beers = Beer.all
+    @all_breweries = Brewery.all
     @error = true
     erb :"beers/edit_beer_form"
   end

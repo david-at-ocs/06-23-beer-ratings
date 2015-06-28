@@ -3,7 +3,7 @@ require_relative "../database_instance_methods.rb"
 
 class Beer  
   attr_reader :id
-  attr_accessor :beer_name
+  attr_accessor :beer_name, :brewery_id
 
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
@@ -23,7 +23,7 @@ class Beer
   def initialize(options = {})
     @id = options["id"]
     @beer_name = options["beer_name"]
-    @brewery_id = options["brewery_id"]
+    @brewery_id = options["brewery_id"].to_i
     # TODO uncomment lines below later when start with other tables
     # @style_id = options["style_id"]
   end    

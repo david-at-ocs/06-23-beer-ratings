@@ -14,6 +14,25 @@
       <input type="submit" value="Change Beer">
     </form>
   </li>
+</ul>
+
+<ul>
+  <li><h3>Change Brewery</h3>
+    <form action="/beer/edit_beer_brewery">
+      <select name="beer_id">
+        <% @all_beers.each do |beer| %>
+          <option value="<%= beer.id %>"><%= beer.id %>. <%= beer.beer_name %></option>
+        <% end %>
+      </select>
+      <select name="brewery_id">
+        <% @all_breweries.each do |brewery| %>
+          <option value="<%= brewery.id %>"><%= brewery.id %>. <%= brewery.brewery_name %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Change Brewery">
+    </form>
+  </li>
+</ul>
 
 <ul>
   <li><a href="beers_menu">Beer menu</a></li>

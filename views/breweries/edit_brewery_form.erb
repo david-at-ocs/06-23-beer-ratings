@@ -1,0 +1,21 @@
+<h1>Edit User</h1>
+<% if @error %>
+  <h3>There was an error updating the user. Please try again.</h3>
+<% end %>
+<ul>
+  <li><h3>Change User's Name</h3>
+    <form action="/users/edit_user_name">
+      <select name="user_id">
+        <% User.all.each do |user| %>
+          <option value="<%= user.id %>"><%= user.id %>. <%= user.user_name %></option>
+        <% end %>
+      </select>
+      <input type="text" placeholder="Change Name" name="user_name">
+      <input type="submit" value="Change User">
+    </form>
+  </li>
+
+<ul>
+  <li><a href="users_menu">Users menu</a></li>
+  <li><a href="/homepage">Homepage</a></li>
+</ul>
