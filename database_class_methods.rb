@@ -27,7 +27,6 @@ module DatabaseClassMethods
       end
     end
     values_for_sql = individual_values_for_sql.join(", ") 
-    binding.pry
     BEERDB.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{values_for_sql});")
     BEERDB.last_insert_row_id
   end
