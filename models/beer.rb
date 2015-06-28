@@ -3,7 +3,7 @@ require_relative "../database_instance_methods.rb"
 
 class Beer  
   attr_reader :id
-  attr_accessor :beer_name, :brewery_id
+  attr_accessor :beer_name, :brewery_id, :style_family_id
 
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
@@ -24,8 +24,7 @@ class Beer
     @id = options["id"]
     @beer_name = options["beer_name"]
     @brewery_id = options["brewery_id"].to_i
-    # TODO uncomment lines below later when start with other tables
-    # @style_id = options["style_id"]
+    @style_family_id = options["style_family_id"]
   end    
   
 
@@ -106,7 +105,7 @@ class Beer
   # gets all of single beer's ratings and the name of each person who rated the beer
   # Returns Array of Hashes
   def get_beer_ratings
-    BEERDB.execute("SELECT beers.beer_name, ratings.rating, users.user_name, breweries.brewery_name FROM ratings JOIN beers ON ratings.beer_id = beers.id JOIN users ON ratings.user_id = users.id JOIN breweries ON beers.brewery_id = breweries.id WHERE beers.id = #{id}")
+    BEERDB.execute("SELECT beers.beer_name, ratings.rating, users.user_name, breweries.brewery_name, style_families.family_name FROM ratings JOIN beers ON ratings.beer_id = beers.id JOIN users ON ratings.user_id = users.id JOIN breweries ON beers.brewery_id = breweries.id LEFT OUTER JOIN style_families ON beers.style_family_id = style_families.id WHERE beers.id = #{id};")
   end
   
   # Returns true if a beer has no ratings

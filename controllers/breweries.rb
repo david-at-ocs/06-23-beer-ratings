@@ -26,28 +26,28 @@ get "/breweries/add" do
   end
 end
 
-# --------------------------------------------- View Users --------------------------------------------------------
+# --------------------------------------------- View Breweries ----------------------------------------------------
 
 get "/breweries/view_all_breweries" do
   @all_breweries = Brewery.all
   erb :"breweries/view_breweries"
 end
 
-# --------------------------------------------- Edit Users --------------------------------------------------------
+# --------------------------------------------- Edit Breweries ----------------------------------------------------
 
-get "/users/edit_users_form" do
-  @all_users = User.all
-  erb :"users/edit_users_form"
+get "/breweries/edit_brewery_form" do
+  @all_breweries = Brewery.all
+  erb :"breweries/edit_brewery_form"
 end
 
-get "/users/edit_user_name" do
-  @user_to_edit = User.find(params["user_id"].to_i)
-  @user_to_edit.user_name = params["user_name"]
-  if @user_to_edit.save
-    erb :"users/user_name_changed"
+get "/breweries/edit_brewery_name" do
+  @brewery_to_edit = Brewery.find(params["brewery_id"].to_i)
+  @brewery_to_edit.brewery_name = params["brewery_name"]
+  if @brewery_to_edit.save
+    erb :"breweries/brewery_name_updated"
   else
     @error = true
-    erb :"users/edit_user_form"
+    erb :"breweries/edit_brewery_form"
   end
 end
 

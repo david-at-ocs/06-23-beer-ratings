@@ -1,21 +1,21 @@
-<h1>Edit User</h1>
+<h1>Edit Brewery</h1>
 <% if @error %>
-  <h3>There was an error updating the user. Please try again.</h3>
+  <h3>There was an error updating the Brewery. Please try again.</h3>
 <% end %>
 <ul>
-  <li><h3>Change User's Name</h3>
-    <form action="/users/edit_user_name">
-      <select name="user_id">
-        <% User.all.each do |user| %>
-          <option value="<%= user.id %>"><%= user.id %>. <%= user.user_name %></option>
+  <li><h3>Change brewery Name</h3>
+    <form action="/breweries/edit_brewery_name">
+      <select name="brewery_id">
+        <% @all_breweries.each do |brewery| %>
+          <option value="<%= brewery.id %>"><%= brewery.id %>. <%= brewery.brewery_name %>, <%= brewery.city %></option>
         <% end %>
       </select>
-      <input type="text" placeholder="Change Name" name="user_name">
-      <input type="submit" value="Change User">
+      <input type="text" placeholder="Change Name" name="brewery_name">
+      <input type="submit" value="Change Name">
     </form>
   </li>
 
 <ul>
-  <li><a href="users_menu">Users menu</a></li>
+  <li><a href="breweries_menu">Users menu</a></li>
   <li><a href="/homepage">Homepage</a></li>
 </ul>
