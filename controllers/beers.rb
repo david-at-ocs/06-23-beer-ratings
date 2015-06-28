@@ -10,6 +10,7 @@ end
 # --------------------------------------------- Add Beer ----------------------------------------------------------
 
 get "/beer/add_beers" do
+  @all_breweries = Brewery.all
   erb :"beers/add_beer_form"
 end
 
@@ -17,7 +18,6 @@ get "/beer/add" do
   # new_beer_id is the Integer returned from the add method
   # TODO add some more stuff to this hash later
   new_beer_id = Beer.add({"beer_name" => params["beer_name"], "brewery_id" => params["brewery_id"]})
-  @all_breweries = Brewery.all
   if new_beer_id
     @new_beer = Beer.find(new_beer_id)
     erb :"beers/beer_added"
