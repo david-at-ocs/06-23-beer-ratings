@@ -106,7 +106,7 @@ class Beer
   # gets all of single beer's ratings and the name of each person who rated the beer
   # Returns Array of Hashes
   def get_beer_ratings
-    BEERDB.execute("SELECT beers.beer_name, ratings.rating, users.user_name FROM ratings JOIN beers ON ratings.beer_id = beers.id JOIN users ON ratings.user_id = users.id WHERE beers.id = #{id};")
+    BEERDB.execute("SELECT beers.beer_name, ratings.rating, users.user_name, breweries.brewery_name FROM ratings JOIN beers ON ratings.beer_id = beers.id JOIN users ON ratings.user_id = users.id JOIN breweries ON beers.brewery_id = breweries.id WHERE beers.id = #{id}")
   end
   
   # Returns true if a beer has no ratings
