@@ -49,7 +49,7 @@ class Beer
     if self.valid?
       return false
     else
-      BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}', brewery_id = '#{brwery_id}' WHERE id = #{@id};")
+      BEERDB.execute("UPDATE beers SET beer_name = '#{@beer_name}', brewery_id = #{@brewery_id} WHERE id = #{@id};")
     end
   end
   
