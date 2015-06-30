@@ -3,5 +3,5 @@
 # ---------------------------------------------------------------------
 
 get "/homepage" do
-  erb :"main/homepage", :layout => :"boilerplate"
+  erb :"main/homepage"
 end

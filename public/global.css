@@ -18,9 +18,10 @@ body {
 
 header {
     font-family: 'Oxygen', sans-serif;
+    color: black;
 }
 
-header h1, h3 {
+header h1, h2, h3, h4, p {
   margin: 10px;
 }
 
@@ -31,8 +32,8 @@ nav ul {
 
 nav  li  {
     background: #DCDCDC;
+    opacity: 0.8;
     padding: 4px;
-    opacity: 0.4;
     padding-left: 10px;
     border-style: solid;
     border-width: 1px;
@@ -40,7 +41,7 @@ nav  li  {
 }
 
 nav li:hover {
-    opacity: 0.9;
+    opacity: 0.6;
 }
 
 nav a {
