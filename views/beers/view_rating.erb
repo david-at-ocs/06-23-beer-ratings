@@ -1,12 +1,14 @@
-<h1><%= @beer_to_view.beer_name %></h1>
-<h2><%= @beer_ratings[0]["brewery_name"] %></h2>
-<h3><%= @beer_ratings[0]["family_name"] %></h3>
-<p>Average rating for <%= @beer_to_view.beer_name %> is <%= @average %></p>
+<header>
+  <h1><%= @beer_to_view.beer_name %></h1>
+  <h2><%= @beer_ratings[0]["brewery_name"] %></h2>
+  <h3><%= @beer_ratings[0]["family_name"] %></h3>
+  <p>Average rating for <%= @beer_to_view.beer_name %> is <%= @average %></p>
+</header>
 
 <table>
-  <tr border="1">
-    <td width="300"><h3>User Name</h3></td>
-    <td width="75"><h3>Rating</h3></td>
+  <tr>
+    <td width="200"><h3>User Name</h3></td>
+    <td width="45"><h3>Rating</h3></td>
   </tr>
   <% @beer_ratings.each do |rating| %>
     <tr>
@@ -14,11 +16,12 @@
       <td><%= rating["rating"] %></td>
     </tr>
   <% end %>
-  <tr>
-    
+  <tr>    
 </table>
 
-<ul>
-  <li><a href="beers_menu">Beer menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="beers_menu">Beer menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>

@@ -1,5 +1,7 @@
-<h1>A list of all beers in the database:</h1>
-<ul>
+<header>
+  <h1>A list of all beers in the database:</h1>
+</header>
+<ul id="view_beers">
   <% @all_beers.each do |beer| %>
     <li><%= beer.beer_name %>
       <ul>
@@ -9,8 +11,9 @@
     </li>
   <% end %>
 </ul>
-
-<ul>
-  <li><a href="beers_menu">Beer menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="beers_menu">Beer menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>

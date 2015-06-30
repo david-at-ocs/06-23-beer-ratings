@@ -10,27 +10,30 @@ html {
 }
 
 body {
+    font-family: 'Oxygen', sans-serif;
+    /* font-family: 'Poiret One', cursive; */
+    /* font-family: 'Quicksand', sans-serif; */
+    color: black;
     background-image: url("/beer-aroma.jpg");
     background-repeat: no-repeat;
     background-color: white;
     margin: 0px;
 }
 
-header {
-    font-family: 'Oxygen', sans-serif;
-    color: black;
+form {
+  margin: 10px;
 }
 
 header h1, h2, h3, h4, p {
   margin: 10px;
 }
 
-nav ul {
+ul {
   list-style-type: none;
   padding: 0px;
 }
 
-nav  li  {
+nav li  {
     background: #DCDCDC;
     opacity: 0.8;
     padding: 4px;
@@ -47,4 +50,17 @@ nav li:hover {
 nav a {
     color: black;
     text-decoration: none;
+}
+
+#view_beers {
+  margin: 30px;
+}
+
+table {
+  margin: 20px;
+}
+
+table h3 {
+  padding: 0;
+  margin: 0px;
 }

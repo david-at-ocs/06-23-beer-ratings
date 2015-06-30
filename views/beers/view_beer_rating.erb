@@ -1,7 +1,9 @@
-<h1>View a Beer's Rating</h1>
-<% if @error %>
-  <h3>There was an error updating the beer. Please try again.</h3>
-<% end %>
+<header>
+  <h1>View a Beer's Rating</h1>
+  <% if @error %>
+    <h3>There was an error updating the beer. Please try again.</h3>
+  <% end %>
+</header>
 <ul>
   <li><h3>Choose a beer:</h3>
     <form action="/beer/view_rating">
@@ -14,7 +16,9 @@
     </form>
   </li>
 
-<ul>
-  <li><a href="beers_menu">Beer menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="beers_menu">Beer menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>
