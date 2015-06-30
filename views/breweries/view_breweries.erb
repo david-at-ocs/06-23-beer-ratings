@@ -1,11 +1,14 @@
-<h1>A list of all breweries in the database:</h1>
-<ul>
+<header>
+  <h1>A list of all breweries in the database:</h1>
+</header>
+<ul id="view_beers">
   <% @all_breweries.each do |breweries| %>
     <li> ID: <%= breweries.id %> -- <%= breweries.brewery_name %></li>
   <% end %>
 </ul>
-
-<ul>
-  <li><a href="breweries_menu">Breweries menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="breweries_menu">Breweries menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>

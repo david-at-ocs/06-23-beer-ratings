@@ -1,7 +1,9 @@
-<h1>Edit Brewery</h1>
-<% if @error %>
-  <h3>There was an error updating the Brewery. Please try again.</h3>
-<% end %>
+<header>
+  <h1>Edit Brewery</h1>
+  <% if @error %>
+    <h3>There was an error updating the Brewery. Please try again.</h3>
+  <% end %>
+</header>
 <ul>
   <li><h3>Change brewery Name</h3>
     <form action="/breweries/edit_brewery_name">
@@ -14,8 +16,9 @@
       <input type="submit" value="Change Name">
     </form>
   </li>
-
-<ul>
-  <li><a href="breweries_menu">Users menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="breweries_menu">Users menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>

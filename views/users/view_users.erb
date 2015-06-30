@@ -1,11 +1,14 @@
-<h1>A list of all users in the database:</h1>
-<ul>
+<header>
+  <h1>A list of all users in the database:</h1>
+</header>
+<ul id="view_beers">
   <% @all_users.each do |users| %>
     <li> ID: <%= users.id %> -- <%= users.user_name %>
   <% end %>
 </ul>
-
-<ul>
-  <li><a href="users_menu">Users menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="users_menu">Users menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>

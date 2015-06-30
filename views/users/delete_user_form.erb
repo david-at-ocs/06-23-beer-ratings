@@ -1,7 +1,9 @@
-<h1>Delete User</h1>
-<% if @error %>
-  <h3>There was an error deleting the user. Please try again.</h3>
-<% end %>
+<header>
+  <h1>Delete User</h1>
+  <% if @error %>
+    <h3>There was an error deleting the user. Please try again.</h3>
+  <% end %>
+</header>
 <ul>
   <li><h3>Delete User</h3>
     <form action="/users/delete_user">
@@ -13,8 +15,9 @@
       <input type="submit" value="Delete User">
     </form>
   </li>
-
-<ul>
-  <li><a href="users_menu">User Menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="users_menu">User Menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>

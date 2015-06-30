@@ -1,7 +1,9 @@
-<h1>Edit User</h1>
-<% if @error %>
-  <h3>There was an error updating the user. Please try again.</h3>
-<% end %>
+<header>
+  <h1>Edit User</h1>
+  <% if @error %>
+    <h3>There was an error updating the user. Please try again.</h3>
+  <% end %>
+</header>
 <ul>
   <li><h3>Change User's Name</h3>
     <form action="/users/edit_user_name">
@@ -14,8 +16,9 @@
       <input type="submit" value="Change User">
     </form>
   </li>
-
-<ul>
-  <li><a href="users_menu">Users menu</a></li>
-  <li><a href="/homepage">Homepage</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><a href="users_menu">Users menu</a></li>
+    <li><a href="/homepage">Homepage</a></li>
+  </ul>
+</nav>
